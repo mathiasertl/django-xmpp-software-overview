@@ -15,10 +15,21 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 from django import template
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
 
 @register.simple_tag
-def ok(name, *args, **kwargs):
-    return 'foo'
+def yes():
+    return mark_safe('<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>')
+
+
+@register.simple_tag
+def no():
+    return mark_safe('<span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>')
+
+
+@register.simple_tag
+def unknown():
+    return mark_safe('<span class="glyphicon glyphicon-question-sign text-muted" aria-hidden="true"></span>')
