@@ -31,6 +31,7 @@ def yes(tooltip=None):
     if tooltip is not None:
         attrs['data-toggle'] = 'tooltip'
         attrs['title'] = mark_safe(tooltip)
+
     return format_html('<span {}></span>', flatatt(attrs))
 
 
