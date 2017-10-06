@@ -17,5 +17,5 @@
 from django.views.generic.base import TemplateView
 
 
-class ConverseJsView(TemplateView):
+class ClientsView(TemplateView):
     template_name = 'xmpp_software_overview/clients.html'
