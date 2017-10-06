@@ -15,14 +15,23 @@
 # If not, see <http://www.gnu.org/licenses/>.
 
 from django import template
+from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 
 register = template.Library()
 
 
 @register.simple_tag
-def yes():
-    return mark_safe('<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>')
+def yes(tooltip=None):
+    attrs = {
+        'class': 'glyphicon glyphicon-ok text-success',
+        'aria-hidden': 'true',
+    }
+    if tooltip is not None:
+        attrs['data-toggle'] = 'tooltip'
+        attrs['title'] = mark_safe(tooltip)
+    return format_html('<span {}></span>', flatatt(attrs))
 
 
 @register.simple_tag
