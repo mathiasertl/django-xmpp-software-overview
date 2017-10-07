@@ -1,5 +1,5 @@
 {% extends "page.html" %}
-{% load i18n staticfiles xmpp_software_overview %}
+{% load i18n staticfiles blog xmpp_software_overview %}
 
 {% block title %}{% trans "Clients" %}{% endblock title %}
 
@@ -13,13 +13,13 @@
 <h2>So what's the best client?</h2>
 <p>Here is what we have found works best:</p>
 <ul>
-<li>Android: <a href="https://conversations.im/">Conversations</a> (&euro; 2,39 on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>)</li>
-<li>iOS (iPhone): <a href="https://chatsecure.org/">ChatSecure</a> (in the <a href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a>)</li>
-<li>Linux: <a href="https://gajim.org/">Gajim</a></li>
-<li>Linux (console): <a href="https://mcabber.com/">mcabber</a> or <a href="http://profanity.im/">Profanity</a></li>
-<li>macOS (Mac OS X): <a href="https://adium.im/">Adium</a></li>
-<li>Web (in the Browser): <a href="https://conversejs.org/">Converse.js</a></li>
-<li>Windows: <a href="https://gajim.org/">Gajim</a></li>
+  <li>Android: <a href="https://conversations.im/">Conversations</a> (&euro; 2,39 on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>)</li>
+  <li>iOS (iPhone): <a href="https://chatsecure.org/">ChatSecure</a> (in the <a href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a>)</li>
+  <li>Linux: <a href="https://gajim.org/">Gajim</a></li>
+  <li>Linux (console): <a href="https://mcabber.com/">mcabber</a> or <a href="http://profanity.im/">Profanity</a></li>
+  <li>macOS (Mac OS X): <a href="https://adium.im/">Adium</a></li>
+  <li>Web (in the Browser): <a href="https://conversejs.org/">Converse.js</a></li>
+  <li>Windows: <a href="https://gajim.org/">Gajim</a></li>
 </ul>
 <h2>Can you be more specific?</h2>
 <p>Sure we can:</p>
@@ -128,7 +128,9 @@
       <td>
         {% yes _("With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;") %}
       </td>
-      <td class="text-left"></td>
+      <td class="text-left">
+        {% page 4 text="Debian/Ubuntu repositories" %}
+      </td>
     </tr>
     <tr class="os-osx os-linux os-win">
       <td><a title="Jitsi - client for Windows, MacOS X &amp; Linux" href="https://jitsi.org/">Jitsi</a><span data-toggle="tooltip" title="version 2.10"></span></td>
@@ -167,7 +169,9 @@
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td class="text-left">
+        {% page 12 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
+      </td>
     </tr>
     <tr class="os-osx os-ios">
       <td><a title="Monal - client for MacOS X and iOS" href="https://monal.im/">Monal</a><span data-toggle="tooltip" title="version 2.9.2"></span></td>
@@ -212,7 +216,9 @@
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td class="text-left">
+        {% page 4 text="Debian/Ubuntu repositories" %}
+      </td>
     </tr>
     <tr class="os-linux os-console">
       <td><a title="Profanity - console-based client" href="http://profanity.im/">Profanity</a><span data-toggle="tooltip" title="version 0.5.1"></span></td>
@@ -225,7 +231,9 @@
       <td class="os-mobile">{% no %}</td>
       <td>{% yes %}</td>
       <td>{% yes _("With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-plugin&quot;&gt;plugin&lt;/a&gt;") %}</td>
-      <td class="text-left"></td>
+      <td class="text-left">
+        {% page 14 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
+      </td>
     </tr>
     <tr class="os-osx os-linux os-win">
       <td><a title="Swift - client for Windows, MacOS X and Linux" href="https://swift.im/swift.html">Swift</a></td>
@@ -279,7 +287,7 @@
       <td>{% no %}</td>
       <td class="text-left">On <a title="Zom on Google Play" href="https://play.google.com/store/apps/details?id=im.zom.messenger">Google Play</a>, on the <a title="Zom on the App Store" href="https://itunes.apple.com/us/app/zom-mobile-messenger/id1059530167?mt=8">App Store</a></td>
     </tr>
-</tbody>
+  </tbody>
 </table>
 </div>
 
