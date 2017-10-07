@@ -9,9 +9,10 @@
 {% endblock extrajs %}
 
 {% block content %}
-<p>Jabber/XMPP is an open protocol and anyone may develop a client for it. This means there are many different clients to connect to jabber.at.</p>
-<h2>So what's the best client?</h2>
-<p>Here is what we have found works best:</p>
+<p>{% blocktrans %}Jabber/XMPP is an open protocol and anyone may develop a client for it. This
+means there are many different clients to connect to jabber.at.{% endblocktrans %}</p>
+<h2>{% trans "So what's the best client?" %}</h2>
+<p>{% trans "Here is what we have found works best:" %}</p>
 <ul>
   <li>Android: <a href="https://conversations.im/">Conversations</a> (&euro; 2,39 on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>)</li>
   <li>iOS (iPhone): <a href="https://chatsecure.org/">ChatSecure</a> (in the <a href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a>)</li>
@@ -21,21 +22,21 @@
   <li>Web (in the Browser): <a href="https://conversejs.org/">Converse.js</a></li>
   <li>Windows: <a href="https://gajim.org/">Gajim</a></li>
 </ul>
-<h2>Can you be more specific?</h2>
-<p>Sure we can:</p>
+<h2>{% trans "Can you be more specific?" %}</h2>
+<p>{% trans "Sure we can:" %}</p>
 
 <form class="form-horizontal"><div class="form-group">
-  <label class="control-label col-sm-4" for="id_os">Operating System:</label>
-  <div class="col-sm-8">
+  <label class="control-label col-sm-4 col-md-3" for="id_os">{% trans "Operating System" %}</label>
+  <div class="col-sm-8 col-md-9">
     <select id="os-selector" name="os" class="form-control">
-      <option value="any">Any operating system</option>
-      <option value="android">Android</option>
-      <option value="browser">Browser</option>
-      <option value="ios">iOS (iPhone)</option>
-      <option value="linux">Linux</option>
-      <option value="console">Linux (console)</option>
-      <option value="osx">macOS (Mac OS X)</option>
-      <option value="win">Windows</option>
+      <option value="any">{% trans "Any operating system" %}</option>
+      <option value="android">{% trans "Android" %}</option>
+      <option value="browser">{% trans "Browser" %}</option>
+      <option value="ios">{% trans "iOS (iPhone)" %}</option>
+      <option value="linux">{% trans "Linux" %}</option>
+      <option value="console">{% trans "Linux (console)" %}</option>
+      <option value="osx">{% trans "macOS (Mac OS X)" %}</option>
+      <option value="win">{% trans "Windows" %}</option>
     </select>
   </div>
 </div></form>
@@ -44,9 +45,9 @@
 <table class="table table-bordered table-hover text-center xmpp-software-overview-glyphs">
   <thead>
     <tr>
-      <th rowspan="2">Clients</th>
+      <th rowspan="2">{% trans "Client" %}</th>
       <th title="XEP - XMPP Enhancement Proposal" colspan="9" data-os-any-attrs="{&quot;colspan&quot;: 9}" data-os-mobile-attrs="{&quot;colspan&quot;: 9}" data-os-desktop-attrs="{&quot;colspan&quot;: 7}">XEPs</th>
-      <th rowspan="2">Notes</th>
+      <th rowspan="2">{% trans "Notes" %}</th>
     </tr>
     <tr>
       <th><a title="XEP-0027: Current Jabber OpenPGP Usage" href="http://xmpp.org/extensions/xep-0027.html">0027</a></th>
