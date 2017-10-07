@@ -3,6 +3,10 @@
 
 {% block title %}{% trans "Clients" %}{% endblock title %}
 
+{% block extracss %}
+<link href="{% static 'xmpp_software_overview/xmpp_software_overview.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block extrajs %}
 <script src="{% static 'xmpp_software_overview/lib/platform.js' %}"></script>
 <script src="{% static 'xmpp_software_overview/xmpp_software_overview.js' %}"></script>
@@ -42,7 +46,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
 </div></form>
 
 <div class="table-responsive">
-<table class="table table-bordered table-hover text-center xmpp-software-overview-glyphs">
+<table class="table table-bordered table-hover text-center xmpp-software-overview-table">
   <thead>
     <tr>
       <th rowspan="2">{% trans "Client" %}</th>
@@ -73,7 +77,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% unknown %}</td>
       <td>{% unknown %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-ios">
       <td><a title="ChatSecure - client for iOS" href="https://chatsecure.org/">ChatSecure</a><span data-toggle="tooltip" title="Version 4.1.0"></span></td>
@@ -86,7 +90,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% yes %}</td>
       <td>{% yes %}</td>
       <td>{% yes %}</td>
-      <td class="text-left">On the <a title="ChatSecure on the App Store" href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a></td>
+      <td>On the <a title="ChatSecure on the App Store" href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a></td>
     </tr>
     <tr class="os-android">
       <td><a title="Conversations - client for Android" href="https://conversations.im/">Conversations</a><span data-toggle="tooltip" title="Version 1.17.0"></span></td>
@@ -99,7 +103,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% yes %}</td>
       <td>{% yes %}</td>
       <td>{% yes %}</td>
-      <td class="text-left">On <a title="Conversations on Google Play" href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite">Google Play</a> (&euro; 2,39)</td>
+      <td>On <a title="Conversations on Google Play" href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite">Google Play</a> (&euro; 2,39)</td>
     </tr>
     <tr class="os-browser">
       <td><a title="Converse.js - browser-based client" href="https://conversejs.org/">Converse.js</a><span data-toggle="tooltip" title="version 3.0.2"></span></td>
@@ -112,7 +116,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% unknown %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-linux os-win">
       <td><a title="Gajim - client for Windows &amp; Linux" href="https://gajim.org/">Gajim</a><span data-toggle="tooltip" title="version 0.16.8"></span></td>
@@ -129,7 +133,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td>
         {% yes _("With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;") %}
       </td>
-      <td class="text-left">
+      <td>
         {% page 4 text="Debian/Ubuntu repositories" %}
       </td>
     </tr>
@@ -144,7 +148,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-browser">
       <td><a title="JSXC - browser-based client" href="https://www.jsxc.org/">JSXC</a><span data-toggle="tooltip" title="version 3.0.1"></span></td>
@@ -157,7 +161,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% yes %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-linux os-console">
       <td><a title="mcabber - console-based client" href="https://mcabber.com/">mcabber</a><span data-toggle="tooltip" title="version 1.0.5"></span></td>
@@ -170,7 +174,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left">
+      <td>
         {% page 12 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
       </td>
     </tr>
@@ -185,7 +189,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% yes %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-linux os-win">
       <td><a title="Pidgin - client for Windows and Linux" href="https://pidgin.im/">Pidgin</a></td>
@@ -204,7 +208,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td>
         {% yes _("With &lt;a href=&quot;https://github.com/gkdr/lurch&quot;&gt;Plugin&lt;/a&gt;") %}
       </td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-linux os-console">
       <td><a title="poezio - console-based client" href="https://poez.io/">poezio</a><span data-toggle="tooltip" title="version 0.11"></span></td>
@@ -217,7 +221,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left">
+      <td>
         {% page 4 text="Debian/Ubuntu repositories" %}
       </td>
     </tr>
@@ -232,7 +236,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% yes %}</td>
       <td>{% yes _("With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-plugin&quot;&gt;plugin&lt;/a&gt;") %}</td>
-      <td class="text-left">
+      <td>
         {% page 14 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
       </td>
     </tr>
@@ -247,7 +251,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left"></td>
+      <td></td>
     </tr>
     <tr class="os-android">
       <td><a title="Xabber - client for Android" href="https://www.xabber.com/">Xabber</a><span data-toggle="tooltip" title="version 2.0.1"></span></td>
@@ -260,7 +264,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% yes %}</td>
       <td>{% no %}</td>
-      <td class="text-left">On <a title="Xabber on Google Play" href="https://play.google.com/store/apps/details?id=com.xabber.android.beta">Google Play</a></td>
+      <td>On <a title="Xabber on Google Play" href="https://play.google.com/store/apps/details?id=com.xabber.android.beta">Google Play</a></td>
     </tr>
     <tr class="os-android">
       <td><a title="yaxim - client for Android" href="https://yaxim.org/">yaxim</a><span data-toggle="tooltip" title="version 0.9.0"></span></td>
@@ -273,7 +277,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td class="text-left">On <a title="yaxim on Google Play" href="https://play.google.com/store/apps/details?id=org.yaxim.androidclient">Google Play</a></td>
+      <td>On <a title="yaxim on Google Play" href="https://play.google.com/store/apps/details?id=org.yaxim.androidclient">Google Play</a></td>
     </tr>
     <tr class="os-android os-ios">
       <td><a title="Zom - Client for iOS and Android" href="https://zom.im/">Zom</a></td>
@@ -286,7 +290,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td class="os-mobile">{% unknown %}</td>
       <td>{% unknown %}</td>
       <td>{% no %}</td>
-      <td class="text-left">On <a title="Zom on Google Play" href="https://play.google.com/store/apps/details?id=im.zom.messenger">Google Play</a>, on the <a title="Zom on the App Store" href="https://itunes.apple.com/us/app/zom-mobile-messenger/id1059530167?mt=8">App Store</a></td>
+      <td>On <a title="Zom on Google Play" href="https://play.google.com/store/apps/details?id=im.zom.messenger">Google Play</a>, on the <a title="Zom on the App Store" href="https://itunes.apple.com/us/app/zom-mobile-messenger/id1059530167?mt=8">App Store</a></td>
     </tr>
   </tbody>
 </table>

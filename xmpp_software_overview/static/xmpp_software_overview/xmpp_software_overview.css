@@ -1,2 +1,3 @@
-table.xmpp-software-overview-glyphs {
+table.xmpp-software-overview-table td:last-child {
+    text-align: left;
 }
