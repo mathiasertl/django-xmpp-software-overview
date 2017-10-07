@@ -3,14 +3,14 @@
 
 {% block title %}{% trans "Clients" %}{% endblock title %}
 
-{% block extracss %}
+{% block pagecss %}
 <link href="{% static 'xmpp_software_overview/xmpp_software_overview.css' %}" rel="stylesheet">
 {% endblock %}
 
-{% block extrajs %}
+{% block pagejs %}
 <script src="{% static 'xmpp_software_overview/lib/platform.js' %}"></script>
 <script src="{% static 'xmpp_software_overview/xmpp_software_overview.js' %}"></script>
-{% endblock extrajs %}
+{% endblock %}
 
 {% block content %}
 <p>{% blocktrans %}Jabber/XMPP is an open protocol and anyone may develop a client for it. This
