@@ -36,7 +36,7 @@ class QualityCommand(Command):
         pass
 
     def run(self):
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ca.test_settings")
+        #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ca.test_settings")
 
         print('isort --check-only --diff -rc xmpp_software_overview/ setup.py')
         status = subprocess.call(['isort', '--check-only', '--diff', '-rc',
@@ -58,6 +58,20 @@ class QualityCommand(Command):
         #    sys.exit(status)
 
 
+def find_package_data(dir):
+    data = []
+    package_root = 'xmpp_software_overview/'
+    for root, dirs, files in os.walk(os.path.join(package_root, dir)):
+        for file in files:
+            if file.endswith('.swp'):
+                continue
+            data.append(os.path.join(root, file)[len(package_root):])
+    return data
+
+
+package_data = find_package_data('static') + find_package_data('templates')
+
+
 setup(
     name='django-xmpp-software-overview',
     version='0.1.0',
@@ -71,7 +85,7 @@ setup(
         'xmpp_software_overview.templatetags',
     ],
     #package_dir={'': 'ca'},
-    #package_data={'': package_data},
+    package_data={'': package_data},
     zip_safe=False,  # because of the static files
     install_requires=install_requires,
     cmdclass={
