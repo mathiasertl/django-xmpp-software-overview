@@ -1,3 +1,15 @@
+table.xmpp-software-overview-table .os-specific {
+    display: none;
+}
+table.xmpp-software-overview-table tr.os-specific.os-shown {
+    display: table-row;
+}
+table.xmpp-software-overview-table td.os-specific.os-shown,
+table.xmpp-software-overview-table th.os-specific.os-shown
+{
+    display: table-cell;
+}
+
 table.xmpp-software-overview-table td:last-child {
     text-align: left;
 }
