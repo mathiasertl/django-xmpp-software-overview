@@ -51,7 +51,7 @@ def os_attrs(context, *os):
 
     detected = context['os']
     cls = 'os-specific %s' % ' '.join(['os-%s' % o for o in os])
-    if detected in os:
+    if detected in os or ('mobile' in os and detected in ['android', 'ios']):
         cls += ' os-shown'
 
     attrs = {
