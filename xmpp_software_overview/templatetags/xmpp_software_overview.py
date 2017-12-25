@@ -43,3 +43,16 @@ def no():
 @register.simple_tag
 def unknown():
     return mark_safe('<span class="glyphicon glyphicon-question-sign text-muted" aria-hidden="true"></span>')
+
+
+@register.simple_tag(takes_context=True)
+def os_attrs(context, *os):
+    """Add os-specific attributes to HTML elements."""
+
+    detected = context['os']
+    attrs = {
+        'class': ' '.join(['os-%s' % o for o in os]),
+    }
+    if detected in os:
+        attrs['class'] += ' os-shown'
+    return flatatt(attrs)
