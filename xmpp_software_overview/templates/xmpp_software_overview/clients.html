@@ -29,18 +29,20 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
 <h2>{% trans "Can you be more specific?" %}</h2>
 <p>{% trans "Sure we can:" %}</p>
 
+<p>{% trans "Detected" %}: {{ os }}</p>
+
 <form class="form-horizontal"><div class="form-group">
   <label class="control-label col-sm-4 col-md-3" for="id_os">{% trans "Operating System" %}</label>
   <div class="col-sm-8 col-md-9">
     <select id="os-selector" name="os" class="form-control">
       <option value="any">{% trans "Any operating system" %}</option>
-      <option value="android">{% trans "Android" %}</option>
-      <option value="browser">{% trans "Browser" %}</option>
-      <option value="ios">{% trans "iOS (iPhone/iPad)" %}</option>
-      <option value="linux">{% trans "Linux" %}</option>
+      <option value="android" {% if os == "android" %} selected{% endif %}>{% trans "Android" %}</option>
+      <option value="browser" {% if os == "browser" %} selected{% endif %}>{% trans "Browser" %}</option>
+      <option value="ios" {% if os == "ios" %} selected{% endif %}>{% trans "iOS (iPhone/iPad)" %}</option>
+      <option value="linux" {% if os == "linux" %} selected{% endif %}>{% trans "Linux" %}</option>
       <option value="console">{% trans "Linux (console)" %}</option>
-      <option value="osx">{% trans "macOS X (Apple Desktop)" %}</option>
-      <option value="win">{% trans "Windows" %}</option>
+      <option value="osx" {% if os == "osx" %} selected{% endif %}>{% trans "macOS X (Apple Desktop)" %}</option>
+      <option value="win" {% if os == "win" %} selected{% endif %}>{% trans "Windows" %}</option>
     </select>
   </div>
 </div></form>
