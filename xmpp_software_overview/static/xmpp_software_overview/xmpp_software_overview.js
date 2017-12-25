@@ -15,6 +15,7 @@ function xmpp_software_overview_detect_platform() {
      */
 
     let family = platform.os.family.toLowerCase();
+    console.log('family "' + family + '" detected');
 
     if (/^android/i.test(family)) {
         return 'android';
@@ -24,7 +25,7 @@ function xmpp_software_overview_detect_platform() {
         return 'linux';
     } else if (/^windows/i.test(family)) {
         return 'win';
-    } else if (/^osx/i.test(family)) {
+    } else if (/^os\s*x/i.test(family)) {
         return 'osx';
     }
     return 'any';
