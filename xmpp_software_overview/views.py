@@ -29,9 +29,7 @@ class ClientsView(TemplateView):
         else:
             ua_string = self.request.META['HTTP_USER_AGENT']
             ua_parsed = user_agent_parser.ParseOS(ua_string)
-            print(ua_parsed)
             os = ua_parsed['family'].lower().strip()
-            print('Family: %s' % os)
             if os == 'mac os x':
                 context['os'] = 'osx'
             elif os == 'ios':
