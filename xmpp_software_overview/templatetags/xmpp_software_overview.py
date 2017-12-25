@@ -50,9 +50,11 @@ def os_attrs(context, *os):
     """Add os-specific attributes to HTML elements."""
 
     detected = context['os']
-    attrs = {
-        'class': ' '.join(['os-%s' % o for o in os]),
-    }
+    cls = 'os-specific %s' % ' '.join(['os-%s' % o for o in os])
     if detected in os:
-        attrs['class'] += ' os-shown'
+        cls += ' os-shown'
+
+    attrs = {
+        'class': cls,
+    }
     return flatatt(attrs)
