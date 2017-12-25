@@ -44,5 +44,6 @@ class ClientsView(TemplateView):
                 context['os'] = 'win'
             else:
                 context['os'] = 'any'
+        context['os_mobile'] = context['os'] in ['android', 'ios']
 
         return context
