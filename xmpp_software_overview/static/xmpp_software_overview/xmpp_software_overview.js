@@ -2,18 +2,17 @@ function xmpp_software_overview_show_os_specific(platform) {
     /* TODO: apply_attrs() is only used for columns, can we get that dynamically?  */
 
     if (platform == 'any' || typeof platform == 'undefined') {
-        $('[class^="os-"], [class*=" os-*]').show();
-        apply_attrs('os-any');
+        $('.os-specific').addClass('os-shown');
     } else {   
-        $('[class^="os-"], [class*=" os-*]').hide();
-        $('.os-' + platform).show();
-        apply_attrs('os-' + platform);
+        $('.os-specific').removeClass('os-shown');
+        $('.os-' + platform).addClass('os-shown');
 
         if (platform == 'android' || platform == 'ios') {
-            $('.os-mobile').show();
-            apply_attrs('os-mobile');
+            $('.os-mobile').addClass('os-shown');
+            $('#xep-header').attr('colspan', "9")
         } else {
-            apply_attrs('os-desktop');
+            $('.os-mobile').removeClass('os-shown');
+            $('#xep-header').attr('colspan', "7")
         }
     }
 };
