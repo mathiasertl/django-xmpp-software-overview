@@ -51,7 +51,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
   <thead>
     <tr>
       <th rowspan="2">{% trans "Client" %}</th>
-      <th title="XEP - XMPP Enhancement Proposal" colspan="9" data-os-any-attrs="{&quot;colspan&quot;: 9}" data-os-mobile-attrs="{&quot;colspan&quot;: 9}" data-os-desktop-attrs="{&quot;colspan&quot;: 7}">XEPs</th>
+      <th title="XEP - XMPP Enhancement Proposal" colspan="{% if os_mobile %}9{% else %}7{% endif %}">XEPs</th>
       <th rowspan="2">{% trans "Notes" %}</th>
     </tr>
     <tr>
