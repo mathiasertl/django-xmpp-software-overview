@@ -7,7 +7,7 @@ function xmpp_software_overview_show_os_specific(platform) {
         $('.os-specific').removeClass('os-shown');
         $('.os-' + platform).addClass('os-shown');
 
-        if (platform == 'android' || platform == 'ios') {
+        if (platform == 'android' || platform == 'ios' || platform == 'any') {
             $('.os-mobile').addClass('os-shown');
             $('#xep-header').attr('colspan', "9")
         } else {
