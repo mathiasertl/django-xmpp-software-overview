@@ -61,7 +61,7 @@ msgstr "oder"
 
 #: templates/xmpp_software_overview/clients.html:26
 msgid "(in the Browser)"
-msgstr "im Browser"
+msgstr "(im Browser)"
 
 #: templates/xmpp_software_overview/clients.html:29
 msgid "Can you be more specific?"
