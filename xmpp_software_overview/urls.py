@@ -19,7 +19,6 @@ from django.urls import path
 
 from .views import ClientsView
 
-
 app_name = 'xmpp-software-overview'
 urlpatterns = [
     path('clients/', ClientsView.as_view()),
