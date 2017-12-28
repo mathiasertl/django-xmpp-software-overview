@@ -63,7 +63,7 @@ def find_package_data(dir):
     package_root = 'xmpp_software_overview/'
     for root, dirs, files in os.walk(os.path.join(package_root, dir)):
         for file in files:
-            if file.endswith('.swp') or file.endswith('.mo'):
+            if file.endswith('.swp'):
                 continue
             data.append(os.path.join(root, file)[len(package_root):])
     return data
