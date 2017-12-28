@@ -31,27 +31,27 @@ msgstr ""
 
 #: templates/xmpp_software_overview/clients.html:18
 msgid "So what's the best client?"
-msgstr ""
+msgstr "Also was ist der beste Client"
 
 #: templates/xmpp_software_overview/clients.html:19
 msgid "Here is what we have found works best:"
-msgstr ""
+msgstr "Was unserer Meinung nach am besten funktioniert:"
 
 #: templates/xmpp_software_overview/clients.html:29
 msgid "Can you be more specific?"
-msgstr ""
+msgstr "Geht es bitte etwas genauer?"
 
 #: templates/xmpp_software_overview/clients.html:30
 msgid "Sure we can:"
-msgstr ""
+msgstr "Aber klar doch:"
 
 #: templates/xmpp_software_overview/clients.html:33
 msgid "Operating System"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: templates/xmpp_software_overview/clients.html:36
 msgid "Any operating system"
-msgstr ""
+msgstr "Alle"
 
 #: templates/xmpp_software_overview/clients.html:37
 msgid "Android"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: templates/xmpp_software_overview/clients.html:41
 msgid "Linux (console)"
-msgstr ""
+msgstr "Linux (Konsole)"
 
 #: templates/xmpp_software_overview/clients.html:42
 msgid "macOS X (Apple Desktop)"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: templates/xmpp_software_overview/clients.html:61
 msgid "Notes"
-msgstr ""
+msgstr "Anmerkungen"
 
 #: templates/xmpp_software_overview/clients.html:81
 #: templates/xmpp_software_overview/clients.html:86
