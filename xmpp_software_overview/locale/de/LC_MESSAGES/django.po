@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-28 15:41+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/xmpp_software_overview/clients.html:4
+msgid "Clients"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:16
+msgid ""
+"Jabber/XMPP is an open protocol and anyone may develop a client for it. "
+"This\n"
+"means there are many different clients to connect to jabber.at."
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:18
+msgid "So what's the best client?"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:19
+msgid "Here is what we have found works best:"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:29
+msgid "Can you be more specific?"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:30
+msgid "Sure we can:"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:33
+msgid "Operating System"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:36
+msgid "Any operating system"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:37
+msgid "Android"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:38
+msgid "Browser"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:39
+msgid "iOS (iPhone/iPad)"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:40
+msgid "Linux"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:41
+msgid "Linux (console)"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:42
+msgid "macOS X (Apple Desktop)"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:43
+msgid "Windows"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:59
+msgid "Client"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:61
+msgid "Notes"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:81
+#: templates/xmpp_software_overview/clients.html:86
+msgid ""
+"With &lt;a href=&quot;https://github.com/shtrom/Lurch4Adium&quot;&gt;"
+"plugin&lt;/a&gt;"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:141
+msgid ""
+"With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/"
+"HttpUploadPlugin&quot; title=&quot;HTTP Upload plugin for Gajim&quot;&gt;"
+"plugin&lt;/a&gt;"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:144
+msgid ""
+"With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/"
+"OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:211
+msgid ""
+"With &lt;a href=&quot;https://github.com/segler-alex/Pidgin-GPG&quot; "
+"title=&quot;GPG plugin for Pidgin&quot;&gt;plugin&lt;/a&gt;"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:216
+msgid ""
+"With &lt;a href=&quot;https://github.com/gkdr/carbons&quot;&gt;Plugin&lt;/"
+"a&gt;"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:224
+msgid ""
+"With &lt;a href=&quot;https://github.com/gkdr/lurch&quot;&gt;Plugin&lt;/a&gt;"
+msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:255
+msgid ""
+"With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-"
+"plugin&quot;&gt;plugin&lt;/a&gt;"
+msgstr ""
