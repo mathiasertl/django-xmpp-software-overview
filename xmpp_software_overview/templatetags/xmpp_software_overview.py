@@ -18,17 +18,21 @@ from django import template
 from django.forms.utils import flatatt
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext as _
 
 register = template.Library()
 
 
 @register.simple_tag
-def yes(tooltip=None):
+def yes(tooltip=None, plugin=None):
     attrs = {
         'class': 'glyphicon glyphicon-ok text-success',
         'aria-hidden': 'true',
     }
-    if tooltip is not None:
+    if plugin is not None:
+        attrs['data-toggle'] = 'tooltip'
+        attrs['title'] = mark_safe(_('With <a href=\'%(url)s\'>plugin</a>') % {'url': plugin})
+    elif tooltip is not None:
         attrs['data-toggle'] = 'tooltip'
         attrs['title'] = mark_safe(tooltip)
 

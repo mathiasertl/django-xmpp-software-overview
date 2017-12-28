@@ -78,12 +78,12 @@ General sources:
       <td class="xep-0027">{% unknown %}</td>
       <td>{% no %}</td>
       <td>{% unknown %}</td>
-      <td class="xep-0280">{% yes _("With &lt;a href=&quot;https://github.com/shtrom/Lurch4Adium&quot;&gt;plugin&lt;/a&gt;") %}</td>
+      <td class="xep-0280">{% yes plugin="https://github.com/shtrom/Lurch4Adium" %}</td>
       <td>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td>{% unknown %}</td>
-      <td class="xep-0384">{% yes _("With &lt;a href=&quot;https://github.com/shtrom/Lurch4Adium&quot;&gt;plugin&lt;/a&gt;") %}</td>
+      <td class="xep-0384">{% yes plugin="https://github.com/shtrom/Lurch4Adium" %}</td>
       <td></td>
     </tr>
     <tr {% os_attrs "ios" %}>
@@ -138,10 +138,10 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>
-        {% yes _("With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/HttpUploadPlugin&quot; title=&quot;HTTP Upload plugin for Gajim&quot;&gt;plugin&lt;/a&gt;") %}
+        {% yes plugin="https://dev.gajim.org/gajim/gajim-plugins/wikis/HttpUploadPlugin" %}
       </td>
       <td>
-        {% yes _("With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;") %}
+        {% yes plugin="https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin" %}
       </td>
       <td>
         {% page 4 text=_("Debian/Ubuntu repositories") %}
@@ -208,12 +208,12 @@ General sources:
       <td><a title="Pidgin - client for Windows and Linux" href="https://pidgin.im/">Pidgin</a></td>
       {# Probably outdated: https://developer.pidgin.im/wiki/SupportedXEPs #}
       <td>
-        {% yes _("With &lt;a href=&quot;https://github.com/segler-alex/Pidgin-GPG&quot; title=&quot;GPG plugin for Pidgin&quot;&gt;plugin&lt;/a&gt;") %}
+        {% yes plugin="https://github.com/segler-alex/Pidgin-GPG" %}
       </td>
       <td>{% yes %}</td>
       <td class="xep-0198">{% no %}</td>  {# https://developer.pidgin.im/ticket/14252 #}
       <td class="xep-0280">
-        {% yes _("With &lt;a href=&quot;https://github.com/gkdr/carbons&quot;&gt;Plugin&lt;/a&gt;") %}
+        {% yes plugin="https://github.com/gkdr/carbons" %}
         {# see also: https://developer.pidgin.im/ticket/15508 #}
       </td>
       <td class="xep-0313">{% no %}</td>  {# https://developer.pidgin.im/ticket/15653 #}
@@ -221,7 +221,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td>{% unknown %}</td>
       <td>
-        {% yes _("With &lt;a href=&quot;https://github.com/gkdr/lurch&quot;&gt;Plugin&lt;/a&gt;") %}
+        {% yes plugin="https://github.com/gkdr/lurch" %}
       </td>
       <td></td>
     </tr>
@@ -252,7 +252,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% yes %}</td>
-      <td>{% yes _("With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-plugin&quot;&gt;plugin&lt;/a&gt;") %}</td>
+      <td>{% yes plugin="https://github.com/ReneVolution/profanity-omemo-plugin" %}</td>
       <td>
         {% page 14 text=_("Usage instructions") %}, {% page 4 text=_("Debian/Ubuntu repositories") %}
       </td>
