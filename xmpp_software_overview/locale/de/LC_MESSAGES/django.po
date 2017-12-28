@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-28 16:19+0100\n"
+"POT-Creation-Date: 2017-12-28 17:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: templates/xmpp_software_overview/clients.html:4
-msgid "Clients"
+msgid "Jabber/XMPP Clients"
 msgstr ""
 
 #: templates/xmpp_software_overview/clients.html:16
@@ -115,13 +115,6 @@ msgstr ""
 msgid "Notes"
 msgstr "Anmerkungen"
 
-#: templates/xmpp_software_overview/clients.html:81
-#: templates/xmpp_software_overview/clients.html:86
-msgid ""
-"With &lt;a href=&quot;https://github.com/shtrom/Lurch4Adium&quot;&gt;"
-"plugin&lt;/a&gt;"
-msgstr ""
-
 #: templates/xmpp_software_overview/clients.html:100
 #, python-format
 msgid ""
@@ -138,19 +131,6 @@ msgid ""
 msgstr ""
 "Auf <a title=\"%(name)s auf Google Play\" href=\"%(url)s\">Google Play</a>"
 
-#: templates/xmpp_software_overview/clients.html:141
-msgid ""
-"With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/"
-"HttpUploadPlugin&quot; title=&quot;HTTP Upload plugin for Gajim&quot;&gt;"
-"plugin&lt;/a&gt;"
-msgstr ""
-
-#: templates/xmpp_software_overview/clients.html:144
-msgid ""
-"With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/"
-"OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;"
-msgstr ""
-
 #: templates/xmpp_software_overview/clients.html:147
 #: templates/xmpp_software_overview/clients.html:190
 #: templates/xmpp_software_overview/clients.html:241
@@ -163,31 +143,33 @@ msgstr "Debian/Ubuntu Archive"
 msgid "Usage instructions"
 msgstr "Anleitung"
 
-#: templates/xmpp_software_overview/clients.html:211
-msgid ""
-"With &lt;a href=&quot;https://github.com/segler-alex/Pidgin-GPG&quot; "
-"title=&quot;GPG plugin for Pidgin&quot;&gt;plugin&lt;/a&gt;"
-msgstr ""
-
-#: templates/xmpp_software_overview/clients.html:216
-msgid ""
-"With &lt;a href=&quot;https://github.com/gkdr/carbons&quot;&gt;Plugin&lt;/"
-"a&gt;"
-msgstr ""
-
-#: templates/xmpp_software_overview/clients.html:224
-msgid ""
-"With &lt;a href=&quot;https://github.com/gkdr/lurch&quot;&gt;Plugin&lt;/a&gt;"
-msgstr ""
-
-#: templates/xmpp_software_overview/clients.html:255
-msgid ""
-"With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-"
-"plugin&quot;&gt;plugin&lt;/a&gt;"
-msgstr ""
-
 #: templates/xmpp_software_overview/clients.html:315
 #, python-format
 msgid ""
 "on the <a title=\"%(name)s on the App Store\" href=\"%(url)s\">App Store</a>"
 msgstr "im <a title=\"%(name)s im App Store\" href=\"%(url)s\">App Store</a>"
+
+#: templates/xmpp_software_overview/clients.html:323
+#, python-format
+msgid ""
+"Feel information on this page is missing or out of date? Please just <a href="
+"\"%(url)s\">contact us</a>."
+msgstr "Falls ihnen auffällt, dass Informationen nicht mehr aktuell sind, <a href=\"%(url)s\">kontaktieren</a> sie uns bitte einfach."
+
+#: templates/xmpp_software_overview/clients.html:324
+msgid ""
+"You can also find other lists of clients on <a\n"
+"href=\"http://xmpp.org/software/clients.shtml\">xmpp.org</a>, <a href="
+"\"http://en.wikipedia.org/wiki/List_of_XMPP_client_software\">Wikipedia</a>, "
+"on <a href=\"https://www.zash.se/xmpp-clients.html\">zash.se</a>, or, in "
+"French, at <a href=\"https://wiki.jabberfr.org/Clients\">jabberfr.org</a>."
+msgstr ""
+"Weitere Listen von Clients finden sich auch auf <a href=\"http://xmpp.org/software/clients.shtml\">xmpp.org</a>, "
+"<a href=\"http://en.wikipedia.org/wiki/List_of_XMPP_client_software\">Wikipedia</a>, "
+"<a href=\"https://www.zash.se/xmpp-clients.html\">zash.se</a>, oder, auf Französisch, auf "
+"<a href=\"https://wiki.jabberfr.org/Clients\">jabberfr.org</a>."
+
+#: templatetags/xmpp_software_overview.py:34
+#, python-format
+msgid "With <a href='%(url)s'>plugin</a>"
+msgstr "Mit <a href='%(url)s'>Plugin</a>"

@@ -318,7 +318,10 @@ General sources:
 </table>
 </div>
 
-<div class="alert alert-info client-contact">Feel information on this page is missing or out of date? Please just <a href="{% url "core:contact" %}">contact us</a>.</div>
-<p>You can also find other lists of clients on <a href="http://xmpp.org/software/clients.shtml">xmpp.org</a>, <a href="http://en.wikipedia.org/wiki/List_of_XMPP_client_software">Wikipedia</a>, on <a href="https://www.zash.se/xmpp-clients.html">zash.se</a>, or, in French, at <a href="https://wiki.jabberfr.org/Clients">jabberfr.org</a>.</p>
+{% url "core:contact" as contact_url %}
+<div class="alert alert-info client-contact">
+  {% blocktrans with url=contact_url %}Feel information on this page is missing or out of date? Please just <a href="{{ url }}">contact us</a>.{% endblocktrans %}</div>
+<p>{% blocktrans %}You can also find other lists of clients on <a
+href="http://xmpp.org/software/clients.shtml">xmpp.org</a>, <a href="http://en.wikipedia.org/wiki/List_of_XMPP_client_software">Wikipedia</a>, on <a href="https://www.zash.se/xmpp-clients.html">zash.se</a>, or, in French, at <a href="https://wiki.jabberfr.org/Clients">jabberfr.org</a>.{% endblocktrans %}</p>
 
 {% endblock content %}
