@@ -18,12 +18,12 @@ This means there are many different clients to connect to jabber.at.{% endblockt
 <h2>{% trans "So what's the best client?" %}</h2>
 <p>{% trans "Here is what we have found works best:" %}</p>
 <ul>
-  <li>Android: <a href="https://conversations.im/">Conversations</a> (&euro; 2,39 on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>)</li>
-  <li>iOS (iPhone): <a href="https://chatsecure.org/">ChatSecure</a> (in the <a href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a>)</li>
+  <li>Android: <a href="https://conversations.im/">Conversations</a> {% trans '(€ 2,39 on <a href="https://play.google.com/store/apps/details?id=eu.siacs.conversations">Google Play</a>)' %}</li>
+  <li>iOS (iPhone): <a href="https://chatsecure.org/">ChatSecure</a> {% trans '(in the <a href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a>)' %}</li>
   <li>Linux: <a href="https://gajim.org/">Gajim</a></li>
-  <li>Linux (console): <a href="https://mcabber.com/">mcabber</a> or <a href="http://profanity.im/">Profanity</a></li>
+  <li>Linux (console): <a href="https://mcabber.com/">mcabber</a> {% trans "or" %} <a href="http://profanity.im/">Profanity</a></li>
   <li>macOS (Mac OS X): <a href="https://adium.im/">Adium</a></li>
-  <li>Web (in the Browser): <a href="https://conversejs.org/">Converse.js</a></li>
+  <li>Web {% trans "(in the Browser)" %}: <a href="https://conversejs.org/">Converse.js</a></li>
   <li>Windows: <a href="https://gajim.org/">Gajim</a></li>
 </ul>
 <h2>{% trans "Can you be more specific?" %}</h2>
@@ -97,7 +97,7 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://chatsecure.org/blog/chatsecure-v323-xmpp-push/ #}
       <td class="xep-0363">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/681 #}
       <td class="xep-0384">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/376 #}
-      <td>On the <a title="ChatSecure on the App Store" href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a></td>
+      <td>{% blocktrans with name="ChatSecure" url="https://itunes.apple.com/us/app/chatsecure/id464200063" %}On the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
     </tr>
     <tr {% os_attrs "android" %}>
       <td><a title="Conversations - client for Android" href="https://conversations.im/">Conversations</a><span data-toggle="tooltip" title="Version 1.23.3"></span></td>
@@ -111,7 +111,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td>{% yes %}</td>
       <td>{% yes %}</td>
-      <td>On <a title="Conversations on Google Play" href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite">Google Play</a> (&euro; 2,39)</td>
+      <td>{% blocktrans with name="Conversations" url="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %} (€ 2,39)</td>
     </tr>
     <tr {% os_attrs "browser" %}>
       {# https://github.com/jcbrand/converse.js/blob/master/README.md#features #}
@@ -144,7 +144,7 @@ General sources:
         {% yes _("With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;") %}
       </td>
       <td>
-        {% page 4 text="Debian/Ubuntu repositories" %}
+        {% page 4 text=_("Debian/Ubuntu repositories") %}
       </td>
     </tr>
     <tr {% os_attrs "osx" "linux" "win" %}>
@@ -187,7 +187,7 @@ General sources:
       <td>{% no %}</td>
       <td>{% no %}</td>  {# https://bitbucket.org/McKael/mcabber-crew/issues/156/omemo-support #}
       <td>
-        {% page 12 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
+        {% page 12 text=_("Usage instructions") %}, {% page 4 text=_("Debian/Ubuntu repositories") %}
       </td>
     </tr>
     <tr {% os_attrs "osx" "ios" %}>
@@ -238,7 +238,7 @@ General sources:
       <td>{% no %}</td>
       <td class="xep-0384">{% no %}</td>  {# https://dev.louiz.org/issues/3280 #}
       <td>
-        {% page 4 text="Debian/Ubuntu repositories" %}
+        {% page 4 text=_("Debian/Ubuntu repositories") %}
       </td>
     </tr>
     <tr {% os_attrs "linux" "console" %}>
@@ -254,7 +254,7 @@ General sources:
       <td>{% yes %}</td>
       <td>{% yes _("With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-plugin&quot;&gt;plugin&lt;/a&gt;") %}</td>
       <td>
-        {% page 14 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
+        {% page 14 text=_("Usage instructions") %}, {% page 4 text=_("Debian/Ubuntu repositories") %}
       </td>
     </tr>
     <tr {% os_attrs "osx" "linux" "win" %}>
@@ -282,7 +282,7 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% no %}</td>  {# https://github.com/redsolution/xabber-android/issues/529 #}
       <td class="xep-0363">{% yes %}</td>  {# since 1.0.51: https://github.com/redsolution/xabber-android/releases/tag/1.0.51 #}
       <td>{% no %}</td>  {# https://github.com/redsolution/xabber-android/issues/540 #}
-      <td>On <a title="Xabber on Google Play" href="https://play.google.com/store/apps/details?id=com.xabber.android.beta">Google Play</a></td>
+      <td>{% blocktrans with name="Xabber" url="https://play.google.com/store/apps/details?id=com.xabber.android.beta" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %}</td>
     </tr>
     <tr {% os_attrs "android" %}>
       <td><a title="yaxim - client for Android" href="https://yaxim.org/">yaxim</a><span data-toggle="tooltip" title="version 0.9.2"></span></td>
@@ -296,7 +296,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td class="xep-0363">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/196 #}
       <td class="xep-0384">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/197 #}
-      <td>On <a title="yaxim on Google Play" href="https://play.google.com/store/apps/details?id=org.yaxim.androidclient">Google Play</a></td>
+      <td>{% blocktrans with name="yaxim" url="https://play.google.com/store/apps/details?id=org.yaxim.androidclient" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %}</td>
     </tr>
     <tr {% os_attrs "android" "ios" %}>
       <td><a title="Zom - Client for iOS and Android" href="https://zom.im/">Zom</a></td>
@@ -310,7 +310,9 @@ General sources:
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td class="xep-0363">{% unknown %}</td>  {# https://github.com/zom/Zom-Android/issues/198 #}
       <td class="xep-0384">{% no %}</td>
-      <td>On <a title="Zom on Google Play" href="https://play.google.com/store/apps/details?id=im.zom.messenger">Google Play</a>, on the <a title="Zom on the App Store" href="https://itunes.apple.com/us/app/zom-mobile-messenger/id1059530167?mt=8">App Store</a></td>
+      <td>
+        {% blocktrans with name="Zom" url="https://play.google.com/store/apps/details?id=im.zom.messenger" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %}, 
+        {% blocktrans with name="Zom" url="https://itunes.apple.com/us/app/zom-mobile-messenger/id1059530167?mt=8" %}on the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
     </tr>
   </tbody>
 </table>

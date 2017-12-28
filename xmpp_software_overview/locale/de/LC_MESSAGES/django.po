@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-28 15:55+0100\n"
+"POT-Creation-Date: 2017-12-28 16:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,9 @@ msgid ""
 "Jabber/XMPP is an open protocol and anyone may develop a client for it.\n"
 "This means there are many different clients to connect to jabber.at."
 msgstr ""
+"Jabber/XMPP ist ein offenes Protokoll, daher kann auch jedeR einen Client "
+"dafür entwickeln. Es gibt daher eine Unzahl an Clients, um sich zu jabber.at "
+"zu verbinden."
 
 #: templates/xmpp_software_overview/clients.html:18
 msgid "So what's the best client?"
@@ -35,6 +38,30 @@ msgstr "Also was ist der beste Client"
 #: templates/xmpp_software_overview/clients.html:19
 msgid "Here is what we have found works best:"
 msgstr "Was unserer Meinung nach am besten funktioniert:"
+
+#: templates/xmpp_software_overview/clients.html:21
+msgid ""
+"(€ 2,39 on <a href=\"https://play.google.com/store/apps/details?id=eu.siacs."
+"conversations\">Google Play</a>)"
+msgstr ""
+"(€ 2,39 on <a href=\"https://play.google.com/store/apps/details?id=eu.siacs."
+"conversations\">Google Play</a>)"
+
+#: templates/xmpp_software_overview/clients.html:22
+msgid ""
+"(in the <a href=\"https://itunes.apple.com/us/app/chatsecure/"
+"id464200063\">App Store</a>)"
+msgstr ""
+"(im <a href=\"https://itunes.apple.com/us/app/chatsecure/id464200063\">App "
+"Store</a>)"
+
+#: templates/xmpp_software_overview/clients.html:24
+msgid "or"
+msgstr "oder"
+
+#: templates/xmpp_software_overview/clients.html:26
+msgid "(in the Browser)"
+msgstr "im Browser"
 
 #: templates/xmpp_software_overview/clients.html:29
 msgid "Can you be more specific?"
@@ -95,6 +122,22 @@ msgid ""
 "plugin&lt;/a&gt;"
 msgstr ""
 
+#: templates/xmpp_software_overview/clients.html:100
+#, python-format
+msgid ""
+"On the <a title=\"%(name)s on the App Store\" href=\"%(url)s\">App Store</a>"
+msgstr "Im <a title=\"%(name)s im App Store\" href=\"%(url)s\">App Store</a>"
+
+#: templates/xmpp_software_overview/clients.html:114
+#: templates/xmpp_software_overview/clients.html:285
+#: templates/xmpp_software_overview/clients.html:299
+#: templates/xmpp_software_overview/clients.html:314
+#, python-format
+msgid ""
+"On <a title=\"%(name)s on Google Play\" href=\"%(url)s\">Google Play</a>"
+msgstr ""
+"Auf <a title=\"%(name)s auf Google Play\" href=\"%(url)s\">Google Play</a>"
+
 #: templates/xmpp_software_overview/clients.html:141
 msgid ""
 "With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/"
@@ -107,6 +150,18 @@ msgid ""
 "With &lt;a href=&quot;https://dev.gajim.org/gajim/gajim-plugins/wikis/"
 "OmemoGajimPlugin&quot;&gt;plugin&lt;/a&gt;"
 msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:147
+#: templates/xmpp_software_overview/clients.html:190
+#: templates/xmpp_software_overview/clients.html:241
+#: templates/xmpp_software_overview/clients.html:257
+msgid "Debian/Ubuntu repositories"
+msgstr "Debian/Ubuntu Archive"
+
+#: templates/xmpp_software_overview/clients.html:190
+#: templates/xmpp_software_overview/clients.html:257
+msgid "Usage instructions"
+msgstr "Anleitung"
 
 #: templates/xmpp_software_overview/clients.html:211
 msgid ""
@@ -130,3 +185,9 @@ msgid ""
 "With &lt;a href=&quot;https://github.com/ReneVolution/profanity-omemo-"
 "plugin&quot;&gt;plugin&lt;/a&gt;"
 msgstr ""
+
+#: templates/xmpp_software_overview/clients.html:315
+#, python-format
+msgid ""
+"on the <a title=\"%(name)s on the App Store\" href=\"%(url)s\">App Store</a>"
+msgstr "im <a title=\"%(name)s im App Store\" href=\"%(url)s\">App Store</a>"
