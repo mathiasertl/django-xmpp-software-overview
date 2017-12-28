@@ -4,6 +4,7 @@
 *.mo
 /.eggs/
 /bin/
+/build/
 /dist/
 /include/
 /lib/
