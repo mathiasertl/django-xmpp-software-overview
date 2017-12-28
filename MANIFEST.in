@@ -1,0 +1,3 @@
+recursive-include xmpp_software_overview/static *
+recursive-include xmpp_software_overview/templates *
+recursive-include xmpp_software_overview/templates *
