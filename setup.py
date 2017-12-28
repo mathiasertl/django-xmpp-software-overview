@@ -22,7 +22,7 @@ from distutils.cmd import Command
 from setuptools import setup
 
 install_requires = [
-    'Django>=1.8',
+    'Django>=2.0',
 ]
 
 
