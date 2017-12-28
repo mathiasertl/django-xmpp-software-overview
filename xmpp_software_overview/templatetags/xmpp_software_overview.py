@@ -46,15 +46,17 @@ def unknown():
 
 
 @register.simple_tag(takes_context=True)
-def os_attrs(context, *os):
+def os_attrs(context, *os, **kwargs):
     """Add os-specific attributes to HTML elements."""
 
     detected = context['os']
     cls = 'os-specific %s' % ' '.join(['os-%s' % o for o in os])
+    if 'cls' in kwargs:
+        cls += ' %s' % kwargs['cls']
     if detected in os or ('mobile' in os and detected in ['android', 'ios']) or detected == 'any':
         cls += ' os-shown'
 
     attrs = {
-        'class': cls,
+        'class': cls.strip(),
     }
     return flatatt(attrs)
