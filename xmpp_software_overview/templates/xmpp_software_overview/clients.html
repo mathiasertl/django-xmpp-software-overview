@@ -11,6 +11,7 @@
 <script src="{% static 'xmpp_software_overview/xmpp_software_overview.js' %}"></script>
 {% endblock %}
 
+
 {% block content %}
 <p>{% blocktrans %}Jabber/XMPP is an open protocol and anyone may develop a client for it. This
 means there are many different clients to connect to jabber.at.{% endblocktrans %}</p>
@@ -44,6 +45,13 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
   </div>
 </div></form>
 
+{% comment %}
+General sources:
+
+* https://www.zash.se/xmpp-clients.html
+* https://omemo.top/
+{% endcomment %}
+
 <div class="table-responsive">
 <table class="table table-bordered table-hover text-center xmpp-software-overview-table">
   <thead>
@@ -67,32 +75,33 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
   <tbody>
     <tr {% os_attrs "osx" %}>
       <td><a title="Adium - client for MacOS X" href="https://adium.im/">Adium</a></td>
-      <td>{% unknown %}</td>
+      <td class="xep-0027">{% unknown %}</td>
       <td>{% no %}</td>
       <td>{% unknown %}</td>
-      <td>{% yes %}</td>
+      <td class="xep-0280">{% yes _("With &lt;a href=&quot;https://github.com/shtrom/Lurch4Adium&quot;&gt;plugin&lt;/a&gt;") %}</td>
       <td>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td>{% unknown %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0384">{% yes _("With &lt;a href=&quot;https://github.com/shtrom/Lurch4Adium&quot;&gt;plugin&lt;/a&gt;") %}</td>
       <td></td>
     </tr>
     <tr {% os_attrs "ios" %}>
-      <td><a title="ChatSecure - client for iOS" href="https://chatsecure.org/">ChatSecure</a><span data-toggle="tooltip" title="Version 4.1.0"></span></td>
+      <td><a title="ChatSecure - client for iOS" href="https://chatsecure.org/">ChatSecure</a><span data-toggle="tooltip" title="Version 4.2.0"></span></td>
+      <td class="xep-0027">{% no %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/382 #}
       <td>{% no %}</td>
-      <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
-      <td {% os_attrs "mobile" %}>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
+      <td class="xep-0198">{% yes %}</td>  {# since 4.0.1: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v4.0.1 #}
+      <td class="xep-0280">{% yes %}</td>  {# since 4.0.1: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v4.0.1 #}
+      <td class="xep-0313">{% no %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/399 #}
+      <td {% os_attrs "mobile" cls="xep-0352" %}>{% yes %}</td>  {# since 3.2.3: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v3.2.3 #}
+      <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://chatsecure.org/blog/chatsecure-v323-xmpp-push/ #}
+      <td class="xep-0363">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/681 #}
+      <td class="xep-0384">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/376 #}
       <td>On the <a title="ChatSecure on the App Store" href="https://itunes.apple.com/us/app/chatsecure/id464200063">App Store</a></td>
     </tr>
     <tr {% os_attrs "android" %}>
-      <td><a title="Conversations - client for Android" href="https://conversations.im/">Conversations</a><span data-toggle="tooltip" title="Version 1.17.0"></span></td>
+      <td><a title="Conversations - client for Android" href="https://conversations.im/">Conversations</a><span data-toggle="tooltip" title="Version 1.23.3"></span></td>
+      {# https://github.com/siacs/Conversations/blob/master/docs/XEPs.md #}
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% yes %}</td>
@@ -105,21 +114,23 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td>On <a title="Conversations on Google Play" href="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite">Google Play</a> (&euro; 2,39)</td>
     </tr>
     <tr {% os_attrs "browser" %}>
+      {# https://github.com/jcbrand/converse.js/blob/master/README.md#features #}
       <td><a title="Converse.js - browser-based client" href="https://conversejs.org/">Converse.js</a><span data-toggle="tooltip" title="version 3.0.2"></span></td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% yes %}</td>
+      <td>{% no %}</td> {# https://github.com/jcbrand/converse.js/issues/316 #}
+      <td class="xep-0280">{% yes %}</td>
+      <td class="xep-0313">{% yes %}</td>
+      <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
-      <td>{% no %}</td>
-      <td>{% no %}</td>
+      <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/161 #}
+      <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/497 #}
       <td></td>
     </tr>
     <tr {% os_attrs "linux" "win" %}>
-      <td><a title="Gajim - client for Windows &amp; Linux" href="https://gajim.org/">Gajim</a><span data-toggle="tooltip" title="version 0.16.8"></span></td>
-      <td>{% no %}</td>
+      {# https://dev.gajim.org/gajim/gajim/wikis/help/GajimXEPSupport #}
+      <td><a title="Gajim - client for Windows &amp; Linux" href="https://gajim.org/">Gajim</a><span data-toggle="tooltip" title="version 0.16.9"></span></td>
+      <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% yes %}</td>
       <td>{% yes %}</td>
@@ -138,32 +149,34 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
     </tr>
     <tr {% os_attrs "osx" "linux" "win" %}>
       <td><a title="Jitsi - client for Windows, MacOS X &amp; Linux" href="https://jitsi.org/">Jitsi</a><span data-toggle="tooltip" title="version 2.10"></span></td>
+      {# https://github.com/jitsi/jitsi/issues/298 #}
       <td>{% no %}</td>
       <td>{% yes %}</td>
-      <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/300 #}
+      <td class="xep-0280">{% yes %}</td>
+      <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/205 #}
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% no %}</td>
+      <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/199 #}
       <td></td>
     </tr>
     <tr {% os_attrs "browser" %}>
-      <td><a title="JSXC - browser-based client" href="https://www.jsxc.org/">JSXC</a><span data-toggle="tooltip" title="version 3.0.1"></span></td>
+      <td><a title="JSXC - browser-based client" href="https://www.jsxc.org/">JSXC</a><span data-toggle="tooltip" title="version 3.3.2"></span></td>
+      {# https://www.jsxc.org/features.html #}
       <td>{% no %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0280">{% yes %}</td>  {# since 1.1.0: https://github.com/jsxc/jsxc/blob/master/CHANGELOG.md#110---2015-01-08 #}
+      <td class="xep-0313">{% yes %}</td>  {# since 3.2.0: https://github.com/jsxc/jsxc/blob/master/CHANGELOG.md#320---2017-05-17 #}
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0363">{% yes %}</td>  {# since 3.1.0: https://github.com/jsxc/jsxc/blob/master/CHANGELOG.md#310---2017-02-14 #}
+      <td>{% no %}</td>  {# https://github.com/jsxc/jsxc/issues/228 #}
       <td></td>
     </tr>
     <tr {% os_attrs "linux console" %}>
-      <td><a title="mcabber - console-based client" href="https://mcabber.com/">mcabber</a><span data-toggle="tooltip" title="version 1.0.5"></span></td>
+      <td><a title="mcabber - console-based client" href="https://mcabber.com/">mcabber</a><span data-toggle="tooltip" title="version 1.1.0"></span></td>
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
@@ -172,35 +185,38 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% no %}</td>
+      <td>{% no %}</td>  {# https://bitbucket.org/McKael/mcabber-crew/issues/156/omemo-support #}
       <td>
         {% page 12 text="Usage instructions" %}, {% page 4 text="Debian/Ubuntu repositories" %}
       </td>
     </tr>
     <tr {% os_attrs "osx" "ios" %}>
       <td><a title="Monal - client for MacOS X and iOS" href="https://monal.im/">Monal</a><span data-toggle="tooltip" title="version 2.9.2"></span></td>
+      {# https://github.com/anurodhp/Monal/issues/54 #}
       <td>{% unknown %}</td>
       <td>{% no %}</td>
       <td>{% yes %}</td>
       <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0313">{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/4 #}
+      <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/7 #}
+      <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/5 #}
+      <td class="xep-0363">{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/1 #}
+      <td class="xep-0384">{% no %}</td>  {# https://github.com/anurodhp/Monal/issues/9 #}
       <td></td>
     </tr>
     <tr {% os_attrs "linux" "win" %}>
       <td><a title="Pidgin - client for Windows and Linux" href="https://pidgin.im/">Pidgin</a></td>
+      {# Probably outdated: https://developer.pidgin.im/wiki/SupportedXEPs #}
       <td>
         {% yes _("With &lt;a href=&quot;https://github.com/segler-alex/Pidgin-GPG&quot; title=&quot;GPG plugin for Pidgin&quot;&gt;plugin&lt;/a&gt;") %}
       </td>
       <td>{% yes %}</td>
-      <td>{% no %}</td>
-      <td>
+      <td class="xep-0198">{% no %}</td>  {# https://developer.pidgin.im/ticket/14252 #}
+      <td class="xep-0280">
         {% yes _("With &lt;a href=&quot;https://github.com/gkdr/carbons&quot;&gt;Plugin&lt;/a&gt;") %}
+        {# see also: https://developer.pidgin.im/ticket/15508 #}
       </td>
-      <td>{% no %}</td>
+      <td class="xep-0313">{% no %}</td>  {# https://developer.pidgin.im/ticket/15653 #}
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td>{% unknown %}</td>
@@ -211,6 +227,7 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
     </tr>
     <tr {% os_attrs "linux" "console" %}>
       <td><a title="poezio - console-based client" href="https://poez.io/">poezio</a><span data-toggle="tooltip" title="version 0.11"></span></td>
+      {# https://doc.poez.io/0.10/dev/xep.html #}
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% yes %}</td>
@@ -219,13 +236,14 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0384">{% no %}</td>  {# https://dev.louiz.org/issues/3280 #}
       <td>
         {% page 4 text="Debian/Ubuntu repositories" %}
       </td>
     </tr>
     <tr {% os_attrs "linux" "console" %}>
       <td><a title="Profanity - console-based client" href="http://profanity.im/">Profanity</a><span data-toggle="tooltip" title="version 0.5.1"></span></td>
+      {# http://profanity.im/xeps.html #}
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% no %}</td>
@@ -240,10 +258,10 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       </td>
     </tr>
     <tr {% os_attrs "osx" "linux" "win" %}>
-      <td><a title="Swift - client for Windows, MacOS X and Linux" href="https://swift.im/swift.html">Swift</a></td>
+      <td><a title="Swift - client for Windows, MacOS X and Linux" href="https://swift.im/swift.html">Swift</a><span data-toggle="tooltip" title="version 3.0"></span></td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% yes %}</td>
+      <td class="xep-0198">{% yes %}</td>  {# https://www.isode.com/products/swift.html #}
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
@@ -253,33 +271,36 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td></td>
     </tr>
     <tr {% os_attrs "android" %}>
-      <td><a title="Xabber - client for Android" href="https://www.xabber.com/">Xabber</a><span data-toggle="tooltip" title="version 2.0.1"></span></td>
+      <td><a title="Xabber - client for Android" href="https://www.xabber.com/">Xabber</a><span data-toggle="tooltip" title="version 2.2"></span></td>
+      {# More complete: https://github.com/redsolution/xabber-android/wiki/Xabber-Version-History #}
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0198">{% yes %}</td>
+      <td class="xep-0280">{% yes %}</td>  {# since 1.0.3: https://github.com/redsolution/xabber-android/wiki/Xabber-Version-History#103-release-date-2015-05-12 #}
+      <td class="xep-0313">{% yes %}</td>
+      <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>  {# since 1.0.73: https://github.com/redsolution/xabber-android/releases/tag/1.0.73 #}
+      <td {% os_attrs "mobile" cls="xep-0357"%}>{% no %}</td>  {# https://github.com/redsolution/xabber-android/issues/529 #}
+      <td class="xep-0363">{% yes %}</td>  {# since 1.0.51: https://github.com/redsolution/xabber-android/releases/tag/1.0.51 #}
+      <td>{% no %}</td>  {# https://github.com/redsolution/xabber-android/issues/540 #}
       <td>On <a title="Xabber on Google Play" href="https://play.google.com/store/apps/details?id=com.xabber.android.beta">Google Play</a></td>
     </tr>
     <tr {% os_attrs "android" %}>
-      <td><a title="yaxim - client for Android" href="https://yaxim.org/">yaxim</a><span data-toggle="tooltip" title="version 0.9.0"></span></td>
+      <td><a title="yaxim - client for Android" href="https://yaxim.org/">yaxim</a><span data-toggle="tooltip" title="version 0.9.2"></span></td>
+      {# http://yaxim.org/features/ #}
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0198">{% yes %}</td>
+      <td class="xep-0280">{% yes %}</td>
+      <td class="xep-0313">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/98 #}
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
-      <td>{% no %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0363">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/196 #}
+      <td class="xep-0384">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/197 #}
       <td>On <a title="yaxim on Google Play" href="https://play.google.com/store/apps/details?id=org.yaxim.androidclient">Google Play</a></td>
     </tr>
     <tr {% os_attrs "android" "ios" %}>
       <td><a title="Zom - Client for iOS and Android" href="https://zom.im/">Zom</a></td>
+      {# https://github.com/zom/Zom-Android/issues/152 #}
       <td>{% no %}</td>
       <td>{% no %}</td>
       <td>{% unknown %}</td>
@@ -287,8 +308,8 @@ means there are many different clients to connect to jabber.at.{% endblocktrans 
       <td>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
-      <td>{% unknown %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0363">{% unknown %}</td>  {# https://github.com/zom/Zom-Android/issues/198 #}
+      <td class="xep-0384">{% no %}</td>
       <td>On <a title="Zom on Google Play" href="https://play.google.com/store/apps/details?id=im.zom.messenger">Google Play</a>, on the <a title="Zom on the App Store" href="https://itunes.apple.com/us/app/zom-mobile-messenger/id1059530167?mt=8">App Store</a></td>
     </tr>
   </tbody>
