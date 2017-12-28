@@ -14,34 +14,8 @@
 # You should have received a copy of the GNU General Public License along with django-xmpp-account.
 # If not, see <http://www.gnu.org/licenses/>.
 
-from ua_parser import user_agent_parser
-
 from django.views.generic.base import TemplateView
 
 
 class ClientsView(TemplateView):
     template_name = 'xmpp_software_overview/clients.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ClientsView, self).get_context_data(**kwargs)
-        if 'os' in self.request.GET:
-            context['os'] = self.request.GET['os']
-        else:
-            ua_string = self.request.META['HTTP_USER_AGENT']
-            ua_parsed = user_agent_parser.ParseOS(ua_string)
-            os = ua_parsed['family'].lower().strip()
-            if os == 'mac os x':
-                context['os'] = 'osx'
-            elif os == 'ios':
-                context['os'] = 'ios'
-            elif os == 'android':
-                context['os'] = 'android'
-            elif os == 'linux':
-                context['os'] = 'linux'
-            elif os.startswith('windows'):
-                context['os'] = 'win'
-            else:
-                context['os'] = 'any'
-        context['os_mobile'] = context['os'] in ['android', 'ios']
-
-        return context
