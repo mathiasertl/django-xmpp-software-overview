@@ -57,7 +57,7 @@ General sources:
   <thead>
     <tr>
       <th rowspan="2">{% trans "Client" %}</th>
-      <th id="xep-header" title="XEP - XMPP Enhancement Proposal" colspan="{% if os_mobile %}9{% else %}7{% endif %}">XEPs</th>
+      <th id="xep-header" title="XEP - XMPP Enhancement Proposal" colspan="{% if os_mobile %}10{% else %}8{% endif %}">XEPs</th>
       <th rowspan="2">{% trans "Notes" %}</th>
     </tr>
     <tr>
@@ -69,6 +69,7 @@ General sources:
       <th {% os_attrs "mobile" %}><a title="XEP-0352: Client State Indication" href="https://xmpp.org/extensions/xep-0352.html">0352</a></th>
       <th {% os_attrs "mobile" %}><a title="XEP-0357: Push Notifications" href="https://xmpp.org/extensions/xep-0357.html">0357</a></th>
       <th><a title="XEP-0363: HTTP File Upload" href="https://xmpp.org/extensions/xep-0363.html">0363</a></th>
+      <th><a title="XEP-0368: SRV records for XMPP over TLS" href="https://xmpp.org/extensions/xep-0368.html">0368</a></th>
       <th><a title="XEP-0384: OMEMO Encryption" href="https://xmpp.org/extensions/xep-0384.html">0384</a></th>
     </tr>
   </thead>
@@ -82,7 +83,8 @@ General sources:
       <td>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
-      <td>{% unknown %}</td>
+      <td class="xep-0363">{% unknown %}</td>
+      <td class="xep-0368">{% no %}</td>
       <td class="xep-0384">{% yes plugin="https://github.com/shtrom/Lurch4Adium" %}</td>
       <td></td>
     </tr>
@@ -96,6 +98,7 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0352" %}>{% yes %}</td>  {# since 3.2.3: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v3.2.3 #}
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://chatsecure.org/blog/chatsecure-v323-xmpp-push/ #}
       <td class="xep-0363">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/681 #}
+      <td class="xep-0368">{% no %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/893 #}
       <td class="xep-0384">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/376 #}
       <td>{% blocktrans with name="ChatSecure" url="https://itunes.apple.com/us/app/chatsecure/id464200063" %}On the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
     </tr>
@@ -110,6 +113,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td>{% yes %}</td>
+      <td class="xep-0368">{% yes %}</td>
       <td>{% yes %}</td>
       <td>{% blocktrans with name="Conversations" url="https://play.google.com/store/apps/details?id=eu.siacs.conversations&amp;referrer=utm_source%3Dwebsite" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %} (€ 2,39)</td>
     </tr>
@@ -124,6 +128,7 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/161 #}
+      <td class="xep-0368">{% no %}</td>
       <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/497 #}
       <td></td>
     </tr>
@@ -140,6 +145,7 @@ General sources:
       <td>
         {% yes plugin="https://dev.gajim.org/gajim/gajim-plugins/wikis/HttpUploadPlugin" %}
       </td>
+      <td class="xep-0368">{% no %}</td>  {# https://dev.gajim.org/gajim/gajim/issues/8394 #}
       <td>
         {% yes plugin="https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin" %}
       </td>
@@ -158,6 +164,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
+      <td class="xep-0368">{% unknown %}</td>
       <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/199 #}
       <td></td>
     </tr>
@@ -172,6 +179,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td class="xep-0363">{% yes %}</td>  {# since 3.1.0: https://github.com/jsxc/jsxc/blob/master/CHANGELOG.md#310---2017-02-14 #}
+      <td class="xep-0368">{% no %}</td>
       <td>{% no %}</td>  {# https://github.com/jsxc/jsxc/issues/228 #}
       <td></td>
     </tr>
@@ -185,6 +193,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
+      <td class="xep-0368">{% unknown %}</td>
       <td>{% no %}</td>  {# https://bitbucket.org/McKael/mcabber-crew/issues/156/omemo-support #}
       <td>
         {% page 12 text=_("Usage instructions") %}, {% page 4 text=_("Debian/Ubuntu repositories") %}
@@ -201,6 +210,7 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/7 #}
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/5 #}
       <td class="xep-0363">{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/1 #}
+      <td class="xep-0368">{% unknown %}</td>
       <td class="xep-0384">{% no %}</td>  {# https://github.com/anurodhp/Monal/issues/9 #}
       <td>
         {% blocktrans with name="Monal" url="https://itunes.apple.com/us/app/monal-free-xmpp-chat/id317711500?mt=8" %}on the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
@@ -222,6 +232,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td>{% unknown %}</td>
+      <td class="xep-0368">{% no %}</td>
       <td>
         {% yes plugin="https://github.com/gkdr/lurch" %}
       </td>
@@ -238,6 +249,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
+      <td class="xep-0368">{% no %}</td>
       <td class="xep-0384">{% no %}</td>  {# https://dev.louiz.org/issues/3280 #}
       <td>
         {% page 4 text=_("Debian/Ubuntu repositories") %}
@@ -254,6 +266,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% yes %}</td>
+      <td class="xep-0368">{% no %}</td>
       <td>{% yes plugin="https://github.com/ReneVolution/profanity-omemo-plugin" %}</td>
       <td>
         {% page 14 text=_("Usage instructions") %}, {% page 4 text=_("Debian/Ubuntu repositories") %}
@@ -269,6 +282,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
+      <td class="xep-0368">{% unknown %}</td>
       <td>{% no %}</td>
       <td></td>
     </tr>
@@ -283,6 +297,7 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>  {# since 1.0.73: https://github.com/redsolution/xabber-android/releases/tag/1.0.73 #}
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% no %}</td>  {# https://github.com/redsolution/xabber-android/issues/529 #}
       <td class="xep-0363">{% yes %}</td>  {# since 1.0.51: https://github.com/redsolution/xabber-android/releases/tag/1.0.51 #}
+      <td class="xep-0368">{% no %}</td>
       <td>{% no %}</td>  {# https://github.com/redsolution/xabber-android/issues/540 #}
       <td>{% blocktrans with name="Xabber" url="https://play.google.com/store/apps/details?id=com.xabber.android.beta" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %}</td>
     </tr>
@@ -297,6 +312,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td class="xep-0363">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/196 #}
+      <td class="xep-0368">{% no %}</td>
       <td class="xep-0384">{% no %}</td>  {# https://github.com/pfleidi/yaxim/issues/197 #}
       <td>{% blocktrans with name="yaxim" url="https://play.google.com/store/apps/details?id=org.yaxim.androidclient" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %}</td>
     </tr>
@@ -311,6 +327,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
       <td class="xep-0363">{% unknown %}</td>  {# https://github.com/zom/Zom-Android/issues/198 #}
+      <td class="xep-0368">{% unknown %}</td>
       <td class="xep-0384">{% no %}</td>
       <td>
         {% blocktrans with name="Zom" url="https://play.google.com/store/apps/details?id=im.zom.messenger" %}On <a title="{{ name }} on Google Play" href="{{ url }}">Google Play</a>{% endblocktrans %}, 

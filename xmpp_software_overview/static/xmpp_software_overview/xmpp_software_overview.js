@@ -3,17 +3,17 @@ function xmpp_software_overview_show_os_specific(platform) {
 
     if (platform == 'any' || typeof platform == 'undefined') {
         $('.os-specific').addClass('os-shown');
-        $('#xep-header').attr('colspan', "9")
+        $('#xep-header').attr('colspan', "10")
     } else {   
         $('.os-specific').removeClass('os-shown');
         $('.os-' + platform).addClass('os-shown');
 
         if (platform == 'android' || platform == 'ios') {
             $('.os-mobile').addClass('os-shown');
-            $('#xep-header').attr('colspan', "9")
+            $('#xep-header').attr('colspan', "10")
         } else {
             $('.os-mobile').removeClass('os-shown');
-            $('#xep-header').attr('colspan', "7")
+            $('#xep-header').attr('colspan', "8")
         }
     }
 };
