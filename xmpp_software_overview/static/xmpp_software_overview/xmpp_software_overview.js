@@ -1,21 +1,20 @@
 function xmpp_software_overview_show_os_specific(platform) {
-    /* TODO: apply_attrs() is only used for columns, can we get that dynamically?  */
-
     if (platform == 'any' || typeof platform == 'undefined') {
         $('.os-specific').addClass('os-shown');
-        $('#xep-header').attr('colspan', "10")
     } else {   
         $('.os-specific').removeClass('os-shown');
         $('.os-' + platform).addClass('os-shown');
 
         if (platform == 'android' || platform == 'ios') {
             $('.os-mobile').addClass('os-shown');
-            $('#xep-header').attr('colspan', "10")
         } else {
             $('.os-mobile').removeClass('os-shown');
-            $('#xep-header').attr('colspan', "8")
         }
     }
+
+    /* set colspan on the "XEPs" header cell */
+    let colspan = $('.xmpp-software-overview-table tr.os-shown:first td:visible').length - 2;
+    $('#xep-header').attr('colspan', colspan)
 };
 
 $(document).ready(function() {
