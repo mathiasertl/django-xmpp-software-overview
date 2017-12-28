@@ -202,7 +202,9 @@ General sources:
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/5 #}
       <td class="xep-0363">{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/1 #}
       <td class="xep-0384">{% no %}</td>  {# https://github.com/anurodhp/Monal/issues/9 #}
-      <td></td>
+      <td>
+        {% blocktrans with name="Monal" url="https://itunes.apple.com/us/app/monal-free-xmpp-chat/id317711500?mt=8" %}on the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
+      </td>
     </tr>
     <tr {% os_attrs "linux" "win" %}>
       <td><a title="Pidgin - client for Windows and Linux" href="https://pidgin.im/">Pidgin</a></td>
