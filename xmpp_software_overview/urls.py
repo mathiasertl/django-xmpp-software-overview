@@ -15,12 +15,12 @@
 # see <http://www.gnu.org/licenses/>.
 
 
-from django.conf.urls import url
+from django.urls import path
 
 from .views import ClientsView
 
 
 app_name = 'xmpp-software-overview'
 urlpatterns = [
-    url(r'^clients/', ClientsView.as_view()),
+    path('clients/', ClientsView.as_view()),
 ]
