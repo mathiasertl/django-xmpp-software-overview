@@ -16,19 +16,19 @@
 
 from django import template
 from django.forms.utils import flatatt
-from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
+
+from core.templatetags.icons import icon_success
+from core.templatetags.icons import icon_question
+from core.templatetags.icons import icon_error
 
 register = template.Library()
 
 
 @register.simple_tag
 def yes(tooltip=None, plugin=None):
-    attrs = {
-        'class': 'glyphicon glyphicon-ok text-success',
-        'aria-hidden': 'true',
-    }
+    attrs = {}
     if plugin is not None:
         attrs['data-toggle'] = 'tooltip'
         attrs['title'] = mark_safe(_('With <a href=\'%(url)s\'>plugin</a>') % {'url': plugin})
@@ -36,17 +36,17 @@ def yes(tooltip=None, plugin=None):
         attrs['data-toggle'] = 'tooltip'
         attrs['title'] = mark_safe(tooltip)
 
-    return format_html('<span {}></span>', flatatt(attrs))
+    return icon_success(**attrs)
 
 
 @register.simple_tag
 def no():
-    return mark_safe('<span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>')
+    return icon_error()
 
 
 @register.simple_tag
 def unknown():
-    return mark_safe('<span class="glyphicon glyphicon-question-sign text-muted" aria-hidden="true"></span>')
+    return icon_question()
 
 
 @register.simple_tag(takes_context=True)
