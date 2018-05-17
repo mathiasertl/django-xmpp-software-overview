@@ -19,9 +19,9 @@ from django.forms.utils import flatatt
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
 
-from core.templatetags.icons import icon_success
-from core.templatetags.icons import icon_question
 from core.templatetags.icons import icon_error
+from core.templatetags.icons import icon_question
+from core.templatetags.icons import icon_success
 
 register = template.Library()
 
