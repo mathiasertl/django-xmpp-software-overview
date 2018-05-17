@@ -89,12 +89,15 @@ General sources:
       <td></td>
     </tr>
     <tr {% os_attrs "ios" %}>
-      <td><a title="ChatSecure - client for iOS" href="https://chatsecure.org/">ChatSecure</a><span data-toggle="tooltip" title="Version 4.2.0"></span></td>
+      <td>
+        <a title="ChatSecure - client for iOS" href="https://chatsecure.org/">ChatSecure</a>
+        <span data-toggle="tooltip" title="Version 4.3.0"></span>
+      </td>
       <td class="xep-0027">{% no %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/382 #}
       <td>{% no %}</td>
       <td class="xep-0198">{% yes %}</td>  {# since 4.0.1: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v4.0.1 #}
       <td class="xep-0280">{% yes %}</td>  {# since 4.0.1: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v4.0.1 #}
-      <td class="xep-0313">{% no %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/399 #}
+      <td class="xep-0313">{% yes %}</td>  {# since 4.3.0: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v4.3.0 #}
       <td {% os_attrs "mobile" cls="xep-0352" %}>{% yes %}</td>  {# since 3.2.3: https://github.com/ChatSecure/ChatSecure-iOS/releases/tag/v3.2.3 #}
       <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://chatsecure.org/blog/chatsecure-v323-xmpp-push/ #}
       <td class="xep-0363">{% yes %}</td>  {# https://github.com/ChatSecure/ChatSecure-iOS/issues/681 #}
@@ -103,7 +106,10 @@ General sources:
       <td>{% blocktrans with name="ChatSecure" url="https://itunes.apple.com/us/app/chatsecure/id464200063" %}On the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
     </tr>
     <tr {% os_attrs "android" %}>
-      <td><a title="Conversations - client for Android" href="https://conversations.im/">Conversations</a><span data-toggle="tooltip" title="Version 1.23.3"></span></td>
+      <td>
+        <a title="Conversations - client for Android" href="https://conversations.im/">Conversations</a>
+        <span data-toggle="tooltip" title="Version 2.2.0"></span>
+      </td>
       {# https://github.com/siacs/Conversations/blob/master/docs/XEPs.md #}
       <td>{% yes %}</td>
       <td>{% no %}</td>
@@ -119,22 +125,26 @@ General sources:
     </tr>
     <tr {% os_attrs "browser" %}>
       {# https://github.com/jcbrand/converse.js/blob/master/README.md#features #}
-      <td><a title="Converse.js - browser-based client" href="https://conversejs.org/">Converse.js</a><span data-toggle="tooltip" title="version 3.0.2"></span></td>
+      <td>
+        <a title="Converse.js - browser-based client" href="https://conversejs.org/">Converse.js</a>
+        <span data-toggle="tooltip" title="version 3.3.2"></span></td>
       <td>{% no %}</td>
       <td>{% no %}</td>
-      <td>{% no %}</td> {# https://github.com/jcbrand/converse.js/issues/316 #}
+      <td class="xep-0198">{% yes %}</td> {# https://github.com/jcbrand/converse.js/issues/316 #}
       <td class="xep-0280">{% yes %}</td>
       <td class="xep-0313">{% yes %}</td>
       <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% unknown %}</td>
-      <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/161 #}
+      <td class="xep-0363">{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/161, will be in 4.0 #}
       <td class="xep-0368">{% no %}</td>
       <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/497 #}
       <td></td>
     </tr>
     <tr {% os_attrs "linux" "win" %}>
       {# https://dev.gajim.org/gajim/gajim/wikis/help/GajimXEPSupport #}
-      <td><a title="Gajim - client for Windows &amp; Linux" href="https://gajim.org/">Gajim</a><span data-toggle="tooltip" title="version 0.16.9"></span></td>
+      <td>
+        <a title="Gajim - client for Windows &amp; Linux" href="https://gajim.org/">Gajim</a>
+        <span data-toggle="tooltip" title="version 1.0.2"></span></td>
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% yes %}</td>
@@ -145,8 +155,8 @@ General sources:
       <td>
         {% yes plugin="https://dev.gajim.org/gajim/gajim-plugins/wikis/HttpUploadPlugin" %}
       </td>
-      <td class="xep-0368">{% no %}</td>  {# https://dev.gajim.org/gajim/gajim/issues/8394 #}
-      <td>
+      <td class="xep-0368">{% yes %}</td>
+      <td class="xep-0384">
         {% yes plugin="https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin" %}
       </td>
       <td>
@@ -158,14 +168,14 @@ General sources:
       {# https://github.com/jitsi/jitsi/issues/298 #}
       <td>{% no %}</td>
       <td>{% yes %}</td>
-      <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/300 #}
+      <td class="xep-0198">{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/300 #}
       <td class="xep-0280">{% yes %}</td>
-      <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/205 #}
+      <td class="xep-0313">{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/205 #}
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td>{% no %}</td>
       <td class="xep-0368">{% unknown %}</td>
-      <td>{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/199 #}
+      <td class="xep-0384">{% no %}</td>  {# https://github.com/jitsi/jitsi/issues/199 #}
       <td></td>
     </tr>
     <tr {% os_attrs "browser" %}>
@@ -199,23 +209,6 @@ General sources:
         {% page 12 text=_("Usage instructions") %}, {% page 4 text=_("Debian/Ubuntu repositories") %}
       </td>
     </tr>
-    <tr {% os_attrs "osx" "ios" %}>
-      <td><a title="Monal - client for MacOS X and iOS" href="https://monal.im/">Monal</a><span data-toggle="tooltip" title="version 2.9.2"></span></td>
-      {# https://github.com/anurodhp/Monal/issues/54 #}
-      <td>{% unknown %}</td>
-      <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td class="xep-0313">{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/4 #}
-      <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/7 #}
-      <td {% os_attrs "mobile" cls="xep-0357"%}>{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/5 #}
-      <td class="xep-0363">{% yes %}</td>  {# https://github.com/anurodhp/Monal/issues/1 #}
-      <td class="xep-0368">{% unknown %}</td>
-      <td class="xep-0384">{% no %}</td>  {# https://github.com/anurodhp/Monal/issues/9 #}
-      <td>
-        {% blocktrans with name="Monal" url="https://itunes.apple.com/us/app/monal-free-xmpp-chat/id317711500?mt=8" %}on the <a title="{{ name }} on the App Store" href="{{ url }}">App Store</a>{% endblocktrans %}</td>
-      </td>
-    </tr>
     <tr {% os_attrs "linux" "win" %}>
       <td><a title="Pidgin - client for Windows and Linux" href="https://pidgin.im/">Pidgin</a></td>
       {# Probably outdated: https://developer.pidgin.im/wiki/SupportedXEPs #}
@@ -239,16 +232,19 @@ General sources:
       <td></td>
     </tr>
     <tr {% os_attrs "linux" "console" %}>
-      <td><a title="poezio - console-based client" href="https://poez.io/">poezio</a><span data-toggle="tooltip" title="version 0.11"></span></td>
-      {# https://doc.poez.io/0.10/dev/xep.html #}
+      <td>
+        <a title="poezio - console-based client" href="https://poez.io/">poezio</a>
+        <span data-toggle="tooltip" title="version 0.11"></span>
+      </td>
+      {# https://doc.poez.io/0.11/dev/xep.html #}
       <td>{% yes %}</td>
-      <td>{% no %}</td>
-      <td>{% yes %}</td>
-      <td>{% yes %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0167">{% no %}</td>
+      <td class="xep-0198">{% yes %}</td>
+      <td class="xep-0280">{% yes %}</td>
+      <td class="xep-0313">{% no %}</td>
       <td {% os_attrs "mobile" %}>{% yes %}</td>
       <td {% os_attrs "mobile" %}>{% no %}</td>
-      <td>{% no %}</td>
+      <td class="xep-0363">{% no %}</td>
       <td class="xep-0368">{% no %}</td>
       <td class="xep-0384">{% no %}</td>  {# https://dev.louiz.org/issues/3280 #}
       <td>
@@ -287,7 +283,10 @@ General sources:
       <td></td>
     </tr>
     <tr {% os_attrs "android" %}>
-      <td><a title="Xabber - client for Android" href="https://www.xabber.com/">Xabber</a><span data-toggle="tooltip" title="version 2.2"></span></td>
+      <td>
+        <a title="Xabber - client for Android" href="https://www.xabber.com/">Xabber</a>
+        <span data-toggle="tooltip" title="version 2.2"></span>
+      </td>
       {# More complete: https://github.com/redsolution/xabber-android/wiki/Xabber-Version-History #}
       <td>{% no %}</td>
       <td>{% no %}</td>
