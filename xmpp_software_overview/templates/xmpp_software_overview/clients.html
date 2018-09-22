@@ -127,24 +127,24 @@ General sources:
       {# https://github.com/jcbrand/converse.js/blob/master/README.md#features #}
       <td>
         <a title="Converse.js - browser-based client" href="https://conversejs.org/">Converse.js</a>
-        <span data-toggle="tooltip" title="version 3.3.2"></span></td>
+        <span data-toggle="tooltip" title="version 4.0.1"></span></td>
       <td>{% no %}</td>
       <td>{% no %}</td>
       <td class="xep-0198">{% yes %}</td> {# https://github.com/jcbrand/converse.js/issues/316 #}
       <td class="xep-0280">{% yes %}</td>
       <td class="xep-0313">{% yes %}</td>
-      <td {% os_attrs "mobile" cls="xep-0352"%}>{% yes %}</td>
-      <td {% os_attrs "mobile" %}>{% unknown %}</td>
-      <td class="xep-0363">{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/161, will be in 4.0 #}
+      <td {% os_attrs "mobile" cls="xep-0352" %}>{% yes %}</td>
+      <td {% os_attrs "mobile" cls="xep-0357" %}>{% yes %}</td> {# since 4.0.0 #}
+      <td class="xep-0363">{% yes %}</td>  {# since 4.0.0, https://github.com/jcbrand/converse.js/issues/161 #}
       <td class="xep-0368">{% no %}</td>
-      <td>{% no %}</td>  {# https://github.com/jcbrand/converse.js/issues/497 #}
+      <td class="xep-0384">{% yes %}</td>  {# since 4.0.0, https://github.com/jcbrand/converse.js/issues/497 #}
       <td></td>
     </tr>
     <tr {% os_attrs "linux" "win" %}>
       {# https://dev.gajim.org/gajim/gajim/wikis/help/GajimXEPSupport #}
       <td>
         <a title="Gajim - client for Windows &amp; Linux" href="https://gajim.org/">Gajim</a>
-        <span data-toggle="tooltip" title="version 1.0.2"></span></td>
+        <span data-toggle="tooltip" title="version 1.0.3"></span></td>
       <td>{% yes %}</td>
       <td>{% no %}</td>
       <td>{% yes %}</td>
@@ -190,7 +190,7 @@ General sources:
       <td {% os_attrs "mobile" %}>{% no %}</td>
       <td class="xep-0363">{% yes %}</td>  {# since 3.1.0: https://github.com/jsxc/jsxc/blob/master/CHANGELOG.md#310---2017-02-14 #}
       <td class="xep-0368">{% no %}</td>
-      <td>{% no %}</td>  {# https://github.com/jsxc/jsxc/issues/228 #}
+      <td>{% no %}</td>  {# future release 4.0, https://github.com/jsxc/jsxc/issues/228 #}
       <td></td>
     </tr>
     <tr {% os_attrs "linux" "console" %}>
@@ -236,15 +236,16 @@ General sources:
         <a title="poezio - console-based client" href="https://poez.io/">poezio</a>
         <span data-toggle="tooltip" title="version 0.11"></span>
       </td>
-      {# https://doc.poez.io/0.11/dev/xep.html #}
+      {# https://doc.poez.io/dev/xep.html #}
+      {# https://git.poez.io/poezio/tree/CHANGELOG #}
       <td>{% yes %}</td>
       <td class="xep-0167">{% no %}</td>
-      <td class="xep-0198">{% yes %}</td>
+      <td class="xep-0198">{% yes %}</td>  {# since 0.10 #}
       <td class="xep-0280">{% yes %}</td>
       <td class="xep-0313">{% no %}</td>
-      <td {% os_attrs "mobile" %}>{% yes %}</td>
+      <td {% os_attrs "mobile" %}>{% yes %}</td> {# since 0.10 #}
       <td {% os_attrs "mobile" %}>{% no %}</td>
-      <td class="xep-0363">{% no %}</td>
+      <td class="xep-0363">{% yes %}</td> {# since 0.12 #}
       <td class="xep-0368">{% no %}</td>
       <td class="xep-0384">{% no %}</td>  {# https://dev.louiz.org/issues/3280 #}
       <td>
