@@ -1,6 +1,11 @@
 table.xmpp-software-overview-table .os-specific {
     display: none;
 }
+table.xmpp-software-overview-table td,
+table.xmpp-software-overview-table th {
+    padding: 0.5rem;
+}
+
 table.xmpp-software-overview-table tr.os-specific.os-shown {
     display: table-row;
 }
